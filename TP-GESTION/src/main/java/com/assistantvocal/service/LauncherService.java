@@ -32,7 +32,7 @@ public class LauncherService {
             return;
         }
         try {
-            Runtime.getRuntime().exec(command);
+            new ProcessBuilder(command.split("\\s+")).start();
             System.out.println("Trying to launch: " + command);
         } catch (IOException e) {
             System.err.println("Unable to open application: " + e.getMessage());
